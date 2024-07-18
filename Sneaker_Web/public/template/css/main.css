@@ -339,6 +339,8 @@ body {
   align-items: center;
   height: 65%;
   margin-right: 55px;
+  text-decoration: none;
+  color: black;
 }
 
 .logo img {
@@ -385,6 +387,7 @@ body {
   font-size: 14px;
   color: #333;
   padding: 5px 0px;
+  text-decoration: none;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -453,8 +456,8 @@ body {
 
 /*---------------------------------------------*/
 .main-menu>li:hover>a {
-  text-decoration: none;
-  color: #6c7ae0;
+  font-weight: 800;
+  font-size: 900;
 }
 
 .main-menu>li:hover>.sub-menu {
@@ -653,9 +656,9 @@ body {
 }
 
 /*---------------------------------------------*/
-.main-menu>li.active-menu>a {
+/* .main-menu>li.active-menu>a {
   color: #6c7ae0;
-}
+} */
 
 .footer li a {
   color: #b2b2b2;
@@ -1853,6 +1856,10 @@ button.mfp-close {
 
 /*//////////////////////////////////////////////////////////////////
 [ Num Product ]*/
+a {
+  text-decoration: none;
+}
+
 .wrap-num-product {
   width: 140px;
   height: 45px;

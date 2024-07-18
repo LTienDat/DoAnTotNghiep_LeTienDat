@@ -19,12 +19,27 @@ class MainController extends Controller
 
     public function index(Request $request)
     {
+        $quantity =0;
+        $sale = 0;
+        $profit = 0;
+        $totalOrder = 0;
         $total_order = $this->adminMainService->getTotalOrder($request);
+        foreach ($total_order as $key => $value) {
+            $totalOrder += $value->count;
+        }
         $sales = $this->adminMainService->getSales($request);
+        foreach ($sales as $key => $value) {
+            $sale += $value->sales;
+            $quantity += $value->quantity;
+            $profit += $value->profit;
+        }
+
         return view("admin.home",[
             "title"=> "Trang quản trị admin",
-            "total_order" => $total_order,
-            "sales" => $sales
+            "total_order" => $totalOrder,
+            "sales" => $sale,
+            'quantity' => $quantity,
+            'profit' => $profit
         ]);
 }
 
@@ -44,7 +59,6 @@ public function filterByDate(Request $request)
 
 
     $chart_data = [];
-
     foreach ($statistics as $value) {
         $chart_data[] = [
             'orderDate' => $value->orderDate,

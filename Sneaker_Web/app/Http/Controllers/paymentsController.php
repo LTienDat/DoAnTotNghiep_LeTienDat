@@ -52,7 +52,7 @@ class paymentsController extends Controller
             'email.required' => 'Vui lòng nhập email của bạn.',
             'phone.required' => 'Vui lòng nhập số điện thoại của bạn.',
             'address.required' => 'Vui lòng nhập địa chỉ của bạn.',
-        ]);  
+        ]);
         if($request->input("payment_VNP") == "1") {
             return $this->payments->VNPay($request);
         }else{
@@ -66,6 +66,7 @@ class paymentsController extends Controller
 //    }
 
 public function VNPayReturn(Request $request){
+    dd(1);
     $infoPayment = $this->payments->VNPReturn($request);
     return view('paymentVNP', [
         'title' => 'Thông tin giao dịch',

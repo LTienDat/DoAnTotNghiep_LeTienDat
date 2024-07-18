@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .logo span {
     font-size: 26px;
     font-weight: bold;
@@ -168,8 +172,8 @@
 }
 
 .profile-order {
-    width: 70%;
-    margin-left: 15%;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .product {

@@ -1,6 +1,7 @@
 <?php 
 namespace App\Http\Services;
 use App\Models\Cart;
+use App\Models\Customer;
 use App\Models\Statistacal;
 use Carbon\Carbon;
 
@@ -18,11 +19,11 @@ class AdminMainService{
         }
 
         // Truy vấn và tính tổng đơn hàng trong tháng
-        return Cart::selectRaw('DATE(created_at) as date, COUNT(*) as count')
+        return Customer::selectRaw('DATE(created_at) as date, COUNT(*) as count')
         ->whereBetween('created_at', [$startDate, $endDate])
         ->groupBy('date')
         ->orderBy('date', 'ASC')
-        ->first();
+        ->get();
     }
     public function getSales($request){
         if($request->input('form_date') && $request->input('to_date')){
@@ -41,7 +42,7 @@ class AdminMainService{
         ->whereBetween('orderDate', [$startDate, $endDate])
         ->groupBy('orderDate')
         ->orderBy('orderDate', 'ASC')
-        ->first();
+        ->get();
     }
 }
 ?>

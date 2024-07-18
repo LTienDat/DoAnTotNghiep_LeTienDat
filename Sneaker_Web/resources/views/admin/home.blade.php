@@ -8,7 +8,7 @@
         <div class="small-box bg-info">
             <div class="inner">
                 <p>Đơn hàng trong tháng</p>
-                <h3>{{isset($sales) ? $sales->total_order : '0'}}</h3>
+                <h3>{{isset($total_order) ? $total_order : '0'}}</h3>
 
             </div>
             <div class="icon">
@@ -23,7 +23,7 @@
         <div class="small-box bg-success">
             <div class="inner">
                 <p>Doanh thu</p>
-                <h3>{{ isset($sales) ? number_format($sales->sales) . ' VNĐ' : '0 VNĐ' }}</h3>
+                <h3>{{ isset($sales) ? number_format($sales) . ' VNĐ' : '0 VNĐ' }}</h3>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -37,7 +37,7 @@
         <div class="small-box bg-warning">
             <div class="inner">
                 <p>Lợi nhuận</p>
-                <h3>{{isset($sales) ? number_format($sales->profit). 'VNĐ' : "0 VNĐ"}}</h3>
+                <h3>{{isset($profit) ? number_format($profit). 'VNĐ' : "0 VNĐ"}}</h3>
             </div>
             <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -51,7 +51,7 @@
         <div class="small-box bg-danger">
             <div class="inner">
                 <p>số lượng bán được trong tháng</p>
-                <h3>{{isset($sales) ? $sales->quantity : 0}}</h3>
+                <h3>{{isset($quantity) ? $quantity : 0}}</h3>
             </div>
             <div class="icon">
                 <i class="ion ion-pie-graph"></i>
